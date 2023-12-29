@@ -1,8 +1,16 @@
-<h1>Books</h1>
-<p>Title</p>
-<P>Body</P>
+<%#= 後ほどフラッシュメッセージを記述を追加する %>
+<%#=%>
+<h1>一覧：Books</h1>
+<%= link_to "トップページに戻る", root_path %>
+<p>タイトル</p>
+<P>説明</P>
 <%#= 後ほどリンクを作成する %>
-<%#= link_to "show", book_path(book.id) %>
-<%#= link_to "edit", edit_book_path(book.id) %>
-<%#= link_to "dectory", book_path(book.id) %>
-<h4>New book</h4>
+<%#= link_to "詳細", book_path(book.id) %>
+<%#= link_to "編集", edit_book_path(book.id) %>
+<%#= link_to "削除", book_path(book.id) %>
+<h2>新規投稿フォーム</h2>
+<%#= 後ほどバリデーションの記述を追加する %>
+<%#=%>
+<p>タイトル</p>
+<p>説明</p>
+<p>投稿する</p>
