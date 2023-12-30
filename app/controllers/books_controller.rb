@@ -1,15 +1,28 @@
 class BooksController < ApplicationController
-  def new
-    # ビューへ渡すためのインスタンス変数にからのモデルオブジェクトを生成する
-    @list = List.new
-  end
 
   def index
+    @book = Book.new
+    @books = Book.all
   end
 
   def show
   end
 
   def edit
+  end
+
+  def dectoroy
+  end
+
+  def create
+    book = Book.new(book_params)
+    book.save
+    redirect_to '/books'
+  end
+
+  private
+
+  def book_params
+    params.require(:book).permit(:title, :body)
   end
 end
