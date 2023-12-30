@@ -1,9 +1,9 @@
 <%#= 後ほどフラッシュメッセージを記述を追加する %>
 <%#=%>
-<h1>一覧：Books</h1>
-<%= link_to "トップページに戻る", root_path %>
-<p>タイトル</p>
-<P>説明</P>
+<h1>投稿一覧：Books</h1>
+<% @books.each do |book| %>
+<h3>タイトル</h3>
+<h3>説明</h3>
 <%#= 後ほどリンクを作成する %>
 <%#= link_to "詳細", book_path(book.id) %>
 <%#= link_to "編集", edit_book_path(book.id) %>
@@ -18,3 +18,4 @@
   <%= f.text_area :body %>
   <%= f.submit '投稿する' %>
 <% end %>
+<%= link_to "トップページに戻る", root_path %>
