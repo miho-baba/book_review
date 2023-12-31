@@ -9,7 +9,7 @@
 <%#= 後ほど削除リンクを修正する %>
 <%= link_to "詳細", book_path(book.id) %>
 <%= link_to "編集", edit_book_path(book.id) %>
-<%= link_to "削除", book_path(book.id) %>
+<%= link_to "削除", book_path(book.id), method: :delete, "date-confirm" => "本当に削除しますか？" %>
 <% end %>
 
 <h2>新規投稿フォーム</h2>
@@ -18,8 +18,10 @@
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
   <h4>タイトル</h4>
   <%= f.text_field :title %>
+
   <h4>説明</h4>
   <%= f.text_area :body %>
   <%= f.submit '投稿する' %>
+
 <% end %>
 <%= link_to "トップページに戻る", root_path %>

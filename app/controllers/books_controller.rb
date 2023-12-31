@@ -21,10 +21,10 @@ class BooksController < ApplicationController
     redirect_to book_path(book.id)
   end
 
-  def dectoroy　# 投稿データ削除の記述
+  def destroy # 投稿データ削除の記述
     book = Book.find(params[:id])
     book.destroy
-    redirect_to '/books'
+    redirect_to books_path
   end
 
   def create　# 投稿する記述
