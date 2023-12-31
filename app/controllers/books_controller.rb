@@ -15,10 +15,16 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+  def update # 編集の更新の記述
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_to book_path(book.id)
+  end
+
   def dectoroy
   end
 
-  def create
+  def create　# 投稿する記述
     book = Book.new(book_params)
     book.save
     # 詳細ページに遷移する
