@@ -27,7 +27,7 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
-  def create　# 投稿する記述
+  def create # 投稿する記述
     book = Book.new(book_params)
     book.save
     # 詳細ページに遷移する
