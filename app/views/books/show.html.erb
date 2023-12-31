@@ -1,8 +1,11 @@
 <%#= 後ほどフラッシュメッセージの記述を追加する %>
 <%#=%>
 <h1>詳細：Book</h1>
-<p>Title:</p>
-<p>Body:</p>
+<h2>タイトル:</h2>
+<p><%= @book.title %></p>
+
+<h2>説明:</h2>
+<p><%= @book.body %></p>
 <%#= 後ほどリンクを作成する %>
 <%#= link_to "編集", edit_book_path(book.id) %>
 <%= link_to "戻る", books_path %>

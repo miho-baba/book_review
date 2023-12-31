@@ -6,11 +6,12 @@
   <span><%= book.title %></span>
   <h3>説明</h3>
   <span><%= book.body %></span>
-<%#= 後ほどリンクを作成する %>
-<%#= link_to "詳細", book_path(book.id) %>
-<%#= link_to "編集", edit_book_path(book.id) %>
-<%#= link_to "削除", book_path(book.id) %>
+<%#= 後ほど編集と削除リンクを修正する %>
+<%= link_to "詳細", book_path(book.id) %>
+<%= link_to "編集", "/books/edit_book_path(book.id)" %>
+<%= link_to "削除", book_path(book.id) %>
 <% end %>
+
 <h2>新規投稿フォーム</h2>
 <%#= 後ほどバリデーションの記述を追加する %>
 <%#=%>

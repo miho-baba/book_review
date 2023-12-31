@@ -19,7 +19,7 @@ class BooksController < ApplicationController
     book = Book.new(book_params)
     book.save
     # 詳細ページに遷移する
-    redirect_to '/books/:id'
+    redirect_to "/books/#{book.id}"
   end
 
   private
