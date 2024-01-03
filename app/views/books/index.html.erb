@@ -1,6 +1,16 @@
 <%#= 後ほどフラッシュメッセージを記述を追加する %>
 <%#=%>
 <h1>投稿一覧：Books</h1>
+<table>
+  <tr>
+    <th>*本のタイトル</th>
+    <th>*本の説明</th>
+  </tr>
+
+
+
+
+
 <% @books.each do |book| %>
   <h3>タイトル</h3>
   <span><%= book.title %></span>
@@ -11,7 +21,7 @@
 <%= link_to "編集", edit_book_path(book.id) %>
 <%= link_to "削除", book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
 <% end %>
-
+</table>
 <h2>新規投稿フォーム</h2>
 <%#= 後ほどバリデーションの記述を追加する %>
 <%#=%>
