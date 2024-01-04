@@ -22,9 +22,10 @@ class BooksController < ApplicationController
   end
 
   def destroy # 投稿データ削除の記述
-    book = Book.find(params[:id])
-    book.destroy
-    redirect_to books_path
+    @book = Book.find(params[:id])
+    @book.destroy
+    flash[:notice] = "削除に成功しました"
+    redirect_to books_path(@book.id)
   end
 
   def create # 投稿する記述
