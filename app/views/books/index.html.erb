@@ -21,8 +21,14 @@
 </table>
 
 <h2>新規投稿フォーム</h2>
-<%#= 後ほどバリデーションの記述を追加する %>
-<%#=%>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
   <div class="field">
     <h4>タイトル</h4>
