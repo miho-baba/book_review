@@ -28,10 +28,14 @@ class BooksController < ApplicationController
   end
 
   def create # 投稿する記述
-    book = Book.new(book_params)
-    book.save
-    # 詳細ページに遷移する
-    redirect_to book_path(book.id)
+    @book = Book.new(book_params)
+    if @book.save
+      # フラッシュメッセージを定義し、詳細ページに遷移する
+      flash[:notice] = "投稿に成功しました！"
+      redirect_to book_path(@book.id)
+    else
+      render :index
+    end
   end
 
   private
