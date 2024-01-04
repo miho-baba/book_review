@@ -16,15 +16,18 @@ class BooksController < ApplicationController
   end
 
   def update # 編集の更新の記述
-    book = Book.find(params[:id])
-    book.update(book_params)
-    redirect_to book_path(book.id)
+    @book = Book.find(params[:id])
+    @book.update(book_params)
+    # フラッシュメッセージを定義し、編集ページを更新する
+    flash[:notice] = "更新に成功しました！"
+    redirect_to book_path(@book.id)
   end
 
   def destroy # 投稿データ削除の記述
     @book = Book.find(params[:id])
     @book.destroy
-    flash[:notice] = "削除に成功しました"
+    # フラッシュメッセージを定義し、一覧ページを更新する
+    flash[:notice] = "削除に成功しました！"
     redirect_to books_path(@book.id)
   end
 
