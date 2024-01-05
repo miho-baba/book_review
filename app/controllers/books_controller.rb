@@ -23,7 +23,7 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id)
     else
       # バリデーションエラーが表示される
-      flash[:notice] = "更新に失敗しました"
+      flash.now[:alert] = "更新に失敗しました"
       render :edit
     end
   end
@@ -45,7 +45,7 @@ class BooksController < ApplicationController
     else
       # バリデーションエラー時に@booksを再設定する
       @books = Book.all
-      flash[:notice] = "投稿に失敗しました"
+      flash.now[:alert] = "投稿に失敗しました"
       render :index
     end
   end
