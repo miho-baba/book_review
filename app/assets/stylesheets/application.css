@@ -14,5 +14,9 @@
  *= require_self
  */
 .flash-notice {
-  background-color: red;
+  background-color: red; /* 背景の色を赤色にする */
+  border: 2px solid green; /* 背景の赤色を緑色の枠で囲う*/
+  color: white; /* テキストの色を白にする */
+  padding: 20px; /* テキストと枠の間の余白の長さ　*/
+  margin-bottom: 50px; /* フラッシュメッセージの下部の余白の長さ
 }
