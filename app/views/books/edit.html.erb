@@ -6,7 +6,7 @@
     <% end %>
   </ul>
 <% end %>
-<div>
+<div class="<%= 'flash-notice' if flash[:notice] %>">
   <%= flash[:notice] %>
 </div>
 
