@@ -22,6 +22,7 @@ class BooksController < ApplicationController
       flash[:notice] = "更新に成功しました！"
       redirect_to book_path(@book.id)
     else
+      # バリデーションエラーが表示される
       render :edit
     end
   end
@@ -31,7 +32,7 @@ class BooksController < ApplicationController
     @book.destroy
     # フラッシュメッセージを定義し、一覧ページを更新する
     flash[:notice] = "削除に成功しました！"
-    redirect_to books_path(@book.id)
+    redirect_to books_path
   end
 
   def create # 投稿する記述
