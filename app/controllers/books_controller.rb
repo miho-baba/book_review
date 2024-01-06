@@ -40,7 +40,7 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     if @book.save
       # フラッシュメッセージを定義し、詳細ページに遷移する
-      flash[:notice] = "投稿に成功しました！"
+      flash[:notice] = "Book was successfully created."
       redirect_to book_path(@book)
     else
       # バリデーションエラー時に@booksを再設定する
