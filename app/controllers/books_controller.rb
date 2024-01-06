@@ -19,7 +19,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     if @book.update(book_params)
       # フラッシュメッセージを定義し、編集ページを更新する
-      flash[:notice] = "更新に成功しました！"
+      flash[:notice] = "Book was successfully updated."
       redirect_to book_path(@book.id)
     else
       # バリデーションエラーが表示される
